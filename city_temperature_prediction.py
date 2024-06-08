@@ -1,3 +1,5 @@
+import os
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -39,6 +41,7 @@ def israel_temp_and_std_plots(israel_df):
     plt.ylabel('Temperature (°C)')
     sns.scatterplot(data=israel_df, hue='Year', x='DayOfYear', y='Temp', palette='tab10', legend='full')
     plt.legend(title='Year', fontsize='small', title_fontsize='medium', loc='upper right')
+    plt.savefig(os.path.join('.', f"{'2'}.png"))
     plt.show()
 
     # Plot 2-
@@ -57,6 +60,7 @@ def israel_temp_and_std_plots(israel_df):
     for bar in bars:
         y_value = bar.get_height()
         plt.text(bar.get_x() + bar.get_width() / 2, y_value, round(y_value, 2), ha='center', va='bottom')
+    plt.savefig(os.path.join('.', f"{'3'}.png"))
     plt.show()
 
 
@@ -77,6 +81,7 @@ def all_countries_month_ave(df):
     plt.ylabel('Average Temperature (°C)')
     plt.legend(title='Country', fontsize='small', title_fontsize='medium', loc='upper right')
     plt.xticks(list(range(1, 13)))
+    plt.savefig(os.path.join('.', f"{'4'}.png"))
     plt.show()
 
 
@@ -102,7 +107,7 @@ def evaluate_polynomial_models(israel_df):
     plt.figure(figsize=(14, 6))
     degrees = list(test_errors.keys())
     errors = list(test_errors.values())
-    bars = plt.bar(degrees, errors, color='blue')
+    bars = plt.bar(degrees, errors, color='lightsteelblue')
 
     plt.xlabel('Polynomial Degree')
     plt.ylabel('Test Error')
@@ -114,6 +119,7 @@ def evaluate_polynomial_models(israel_df):
         y_value = bar.get_height()
         plt.text(bar.get_x() + bar.get_width() / 2, y_value, error, ha='center', va='bottom')
 
+    plt.savefig(os.path.join('.', f"{'5'}.png"))
     plt.show()
 
     # Find the best degree
@@ -149,6 +155,7 @@ def fit_and_evaluate_final_model(israel_df, best_degree):
         y_value = bar.get_height()
         plt.text(bar.get_x() + bar.get_width() / 2, y_value, round(y_value, 2), ha='center', va='bottom')
 
+    plt.savefig(os.path.join('.', f"{'6'}.png"))
     plt.show()
 
 

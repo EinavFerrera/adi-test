@@ -184,7 +184,7 @@ def fit(X_train, y_train, X_test, y_test):
     plt.title('Mean Loss as a Function of Training Set Size')
     plt.legend()
     plt.grid(True)
-    plt.savefig(os.path.join('.', f"{'p2_q32'}.png"))
+    plt.savefig(os.path.join('.', f"{'1'}.png"))
     plt.show()
 
 if __name__ == '__main__':
