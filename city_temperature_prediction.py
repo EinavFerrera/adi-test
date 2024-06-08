@@ -83,13 +83,11 @@ def all_countries_month_ave(df):
 def evaluate_polynomial_models(israel_df):
     # Initialize X to be day of the year and y to temperature
     X, y = israel_df.DayOfYear, israel_df.Temp
-    print(X)
-    print(y)
+
 
     # Split the dataset into training and test sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=6, test_size=0.25)
-    print(X_train)
-    print(X_test)
+
 
     # Store the errors value to each k
     test_errors = {}
@@ -106,7 +104,7 @@ def evaluate_polynomial_models(israel_df):
     plt.figure(figsize=(14, 6))
     degrees = list(test_errors.keys())
     errors = list(test_errors.values())
-    bars = plt.bar(degrees, errors, color='lightpink')
+    bars = plt.bar(degrees, errors, color='blue')
 
     plt.xlabel('Polynomial Degree')
     plt.ylabel('Test Error')
