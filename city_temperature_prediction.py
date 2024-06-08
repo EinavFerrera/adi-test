@@ -84,10 +84,8 @@ def evaluate_polynomial_models(israel_df):
     # Initialize X to be day of the year and y to temperature
     X, y = israel_df.DayOfYear, israel_df.Temp
 
-
     # Split the dataset into training and test sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=6, test_size=0.25)
-
 
     # Store the errors value to each k
     test_errors = {}
